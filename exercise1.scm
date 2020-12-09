@@ -1,6 +1,6 @@
 #lang racket
 
-; 1.1
+(display "\nexercise1.1\n")
 10
 (+ 5 3 4)
 (- 9 1)
@@ -25,10 +25,10 @@
          (else -1))
     (+ a 1))
 
-; 1.2
+(display "\nexercise1.2\n")
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
 
-; 1.3
+(display "\nexercise1.3\n")
 (define (square-plus a b)
     (+ (* a a) (* b b)))
 
@@ -41,18 +41,18 @@
 
 (f 1 3 4)
 
-; 1.4
+(display "\nexercise1.4\n")
 (define (a-plus-abs-b a b)
     ((if(> b 0) + -) a b))
 (a-plus-abs-b 3 (- 5))
 
-; 1.5
+(display "\nexercise1.5\n")
 (define (p) (p))
 (define (test x y)
     (if (= x 0) 0 y))
 ; (test 0 (p))
 
-; 1.6
+(display "\nexercise1.6\n")
 (define (square x) (* x x))
 (define (sqrt-iter guess x)
     (if (good-enough? guess x)
@@ -68,3 +68,35 @@
     (sqrt-iter 1.0 x))
 (sqrt 9)
 (sqrt 2)
+
+(define (new-if predicate then-clause else-clause)
+    (cond (predicate then-clause)
+    (else else-clause)))
+
+(define (new-sqrt-iter guess x)
+    (new-if (good-enough? guess x)
+        guess
+        (new-sqrt-iter (improve guess x) x)))
+(define (new-sqrt x)
+    (new-sqrt-iter 1.0 x))
+; (new-sqrt 9)
+; (new-sqrt 2)
+
+; (display "\nexercise1.7\n") skip
+
+(display "\nexercise1.8\n")
+(define (cube x) (* x x x))
+(define (cbrt-iter guess x)
+    (if (cugood-enough? guess x)
+        guess
+        (cbrt-iter (cuimprove guess x) x)))
+(define (cuimprove guess x)
+    (/ (+ (/ x (square guess)) (* 2 guess)) 3))
+(define (cugood-enough? guess x)
+    (< (abs (- (cube guess) x)) 0.001))
+(define (cbrt x)
+    (cbrt-iter 1.0 x))
+(cube 3)
+(cuimprove 4.0 27.0)
+(cugood-enough? 3.00001 27)
+(cbrt 27)
