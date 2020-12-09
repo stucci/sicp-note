@@ -1,6 +1,6 @@
 #lang racket
 
-(display "\nexercise1.1\n")
+(display "\n### exercise1.1 ###\n")
 10
 (+ 5 3 4)
 (- 9 1)
@@ -25,10 +25,10 @@
          (else -1))
     (+ a 1))
 
-(display "\nexercise1.2\n")
+(display "\n### exercise1.2 ###\n")
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
 
-(display "\nexercise1.3\n")
+(display "\n### exercise1.3 ###\n")
 (define (square-plus a b)
     (+ (* a a) (* b b)))
 
@@ -41,18 +41,18 @@
 
 (f 1 3 4)
 
-(display "\nexercise1.4\n")
+(display "\n### exercise1.4 ###\n")
 (define (a-plus-abs-b a b)
     ((if(> b 0) + -) a b))
 (a-plus-abs-b 3 (- 5))
 
-(display "\nexercise1.5\n")
+(display "\n### exercise1.5 ###\n")
 (define (p) (p))
 (define (test x y)
     (if (= x 0) 0 y))
 ; (test 0 (p))
 
-(display "\nexercise1.6\n")
+(display "\n### exercise1.6 ###\n")
 (define (square x) (* x x))
 (define (sqrt-iter guess x)
     (if (good-enough? guess x)
@@ -82,9 +82,9 @@
 ; (new-sqrt 9)
 ; (new-sqrt 2)
 
-; (display "\nexercise1.7\n") skip
+; (display "\n### exercise1.7 ###\n") skip
 
-(display "\nexercise1.8\n")
+(display "\n### exercise1.8 ###\n")
 (define (cube x) (* x x x))
 (define (cbrt-iter guess x)
     (if (cugood-enough? guess x)
