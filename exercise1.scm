@@ -47,9 +47,9 @@
 (a-plus-abs-b 3 (- 5))
 
 (display "\n### exercise1.5 ###\n")
-(define (p) (p))
-(define (test x y)
-    (if (= x 0) 0 y))
+; (define (p) (p))
+; (define (test x y)
+;     (if (= x 0) 0 y))
 ; (test 0 (p))
 
 (display "\n### exercise1.6 ###\n")
@@ -177,3 +177,47 @@
 (pascal 1 5) (pascal 2 5) (pascal 3 5) (pascal 4 5) (pascal 5 5)
 
 (display "\n### exercise1.13 skip ###\n")
+
+(display "\n### exercise1.14 skip ###\n")
+
+(display "\n### exercise1.15 ###\n")
+(define cnt 0)
+(define (p x)
+    (set! cnt (+ cnt 1))
+    (- (* 3 x) (* 4 (cube x)))
+)
+(define (sine angle c)
+    (if (not (> (abs angle) 0.1))
+        angle
+        (p (sine (/ angle 3.0) (+ c 1)))
+    )
+)
+
+(sine 12.15 0)
+cnt
+
+(set! cnt 0)
+(sine 1 0)
+cnt
+
+(set! cnt 0)
+(sine 2 0)
+cnt
+
+(set! cnt 0)
+(sine 3 0)
+cnt
+
+(set! cnt 0)
+(sine 8 0)
+cnt
+
+(set! cnt 0)
+(sine 9 0)
+cnt
+
+(set! cnt 0)
+(sine 25 0)
+cnt
+
+(display "space O(1), step O(log_3 a)")
