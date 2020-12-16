@@ -178,3 +178,5 @@ cnt
 (fast-*-itr 7 9)
 
 (display "\n### exercise1.19 skip ###\n")
+
+(display "\n### exercise1.20 skip ###\n")
